@@ -1,0 +1,23 @@
+
+<div class="container">
+    <div class="row">
+        @for(item of myProducts;track $index){
+        <div class="col-lg-4">
+          
+                <div class="card" >
+                   
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.name}}
+                         
+                        </h5>
+                      <p class="card-text">{{item.description}}</p>
+                      <p class="card-text">{{item.brand.name}}</p>
+                      <a href="#" class="btn btn-primary">$ {{item.price}}  </a>
+                    </div>
+                  </div>
+        
+           
+        </div>
+    }
+    </div>
+</div>
