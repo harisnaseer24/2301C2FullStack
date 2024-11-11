@@ -24,4 +24,16 @@ console.log(result);
 })
 }
 
+DeletProduct(item:any){
+  this.http.delete("https://localhost:7258/api/Product?productId="+item.id).subscribe((result:any)=>{
+
+  alert("Successfully deleted");
+this.getProduct();
+  console.log(result);
+
+})
 }
+
+}
+
+
