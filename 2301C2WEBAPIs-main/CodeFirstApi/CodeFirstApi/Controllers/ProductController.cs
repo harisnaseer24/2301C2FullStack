@@ -116,5 +116,27 @@ namespace CodeFirstApi.Controllers
             }
           
         }
+        [HttpDelete]
+        public IActionResult DeleteProduct(int productId)
+        {
+            var productToDelete = _context.Products.FirstOrDefault(o => o.Id == productId);
+
+            if (productToDelete != null)
+            {
+                
+
+                var deleteQuery = _context.Products.Remove(productToDelete);
+                _context.SaveChanges();
+                return Ok(deleteQuery.Entity);
+
+            }
+            else
+            {
+                return BadRequest("Invalid Id");
+            }
+
+        }
+
+
     }
 }
